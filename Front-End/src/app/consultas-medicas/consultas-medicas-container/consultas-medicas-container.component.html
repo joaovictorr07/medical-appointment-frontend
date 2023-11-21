@@ -1,0 +1,23 @@
+<div>
+  <div [hidden]="modoEdicao">
+    <app-consultas-medicas-grid
+    #grid
+    [listConsultasMedicas]="listConsultasMedicas"
+    (emittDeletar)="handleExcluir($event)"
+    (emittEditar)="handleAlterar($event)"
+    (emittNovo)="handleNovo()"
+
+    >
+    </app-consultas-medicas-grid>
+  </div>
+
+  <div *ngIf="modoEdicao">
+    <app-consultas-medicas-cadastro
+    #appcadastro
+    [consultaMedica]="consultaMedicaSelecionada"
+    (emittSalvar)="handleSalvar($event)"
+    (emittVoltar)="handleVoltar()"
+    >
+    </app-consultas-medicas-cadastro>
+  </div>
+</div>

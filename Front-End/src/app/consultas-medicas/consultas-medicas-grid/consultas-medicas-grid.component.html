@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="card-list-consultas">
+    <h5 class="card-header">Lista de Consultas</h5>
+    <div class="card-body">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Nome Paciente</th>
+            <th scope="col">CRM Médico</th>
+            <th scope="col">Nome Médico</th>
+            <th scope="col">Data Consulta</th>
+            <th scope="col">Hora Consulta</th>
+            <th scope="col">Sala Consulta</th>
+            <th scope="col">Ações</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let consultaMedica of listConsultasMedicas">
+            <td>{{consultaMedica.nomePaciente}}</td>
+            <td>{{consultaMedica.crmMedico}}</td>
+            <td>{{consultaMedica.nomeMedico}}</td>
+            <td>{{consultaMedica.dataConsulta}}</td>
+            <td>{{consultaMedica.horaConsulta}}</td>
+            <td>{{consultaMedica.salaConsulta}}</td>
+            <td class="flex-container-buttom">
+              <button type="button" class="btn btn-warning btn-sm" (click)="btnEdit(consultaMedica)">Editar</button>
+              <button type="button" class="btn btn-danger btn-sm ml-1"
+                (click)="btnDelete(consultaMedica)">Deletar</button>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="card-list-consultas">
+    <button type="button" class="btn btn-warning btn-sm" (click)="btnNew()">Novo</button>
+  </div>
+</div>

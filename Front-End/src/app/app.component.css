@@ -1,0 +1,56 @@
+.breadcrumb {
+    display: flex;
+    border: 1px;
+    height: 50px;
+    min-width: 800px;
+    padding: 10px;
+    width: 100%;
+}
+
+.container {
+    margin-top: 30px;
+}
+
+.flex-container-buttom {
+    display: flex;
+    max-width: 350px;
+    justify-content: center;
+}
+.card-header {
+    display: flex;
+    border: 1px;
+    min-width: 750px;
+    padding: 10px;
+}
+
+.card-list-consultas {
+    display: flex;
+    flex-direction: column;
+}
+.card-add-consulta {
+    display: flex;
+    border: 1px;
+    flex-direction: column;
+    min-width: 700px;
+    padding: 10px;
+}
+
+.add-consulta {
+    margin-bottom: 30px;
+}
+
+.list-consultas {
+    margin-bottom: 50px;
+}
+
+.btn-add-consulta {
+    margin-right: 10px;
+}
+
+.erro-detalhes {
+    color: red;
+}
+
+.btn-edit-consulta {
+    color: black;
+}

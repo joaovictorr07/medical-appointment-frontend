@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="card-add-consulta">
+    <h5 class="card-header">Adicionar/Atualizar Consulta</h5>
+    <div class="card-body">
+      <form [formGroup]="formGroup" id="add-form">
+        <div class="form-group">
+          <label for="model">Nome Paciente</label>
+          <input type="text" formControlName="nomePaciente" id="nome-paciente" minlength="3" name="nomePaciente"
+            class="form-control" placeholder="Digite o nome do Paciente">
+          <div *ngIf="teste" class="invalid-feedback"> Paciente já possui consulta agendada na data informada
+          </div>
+          <div *ngIf="formGroup.errors?.['minlength']" class="erro-detalhes"> Informe ao menos 3 caracteres
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="model">CRM Médico</label>
+          <input type="text" formControlName="crmMedico" id="crmMedico" name="crmMedico" minlength="13" maxlength="13"
+            class="form-control" placeholder="Digite o CRM do Médico">
+          <div *ngIf="formGroup.errors?.['minlength']" class="erro-detalhes"> Informe o CRM no formato (CRM/SP XXXXXX)
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="model">Nome Médico</label>
+          <input type="text" formControlName="nomeMedico" id="nome-medico" name="nomeMedico" minlength="3" required
+            class="form-control" placeholder="Digite o nome do Médico">
+          <div *ngIf="formGroup.errors?.['minlength']" class="erro-detalhes"> Informe ao menos 3 caracteres
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="model">Data Consulta</label>
+          <input type="text" formControlName="dataConsulta" id="data-consulta" name="dataConsulta" minlength="10"
+            maxlength="10" class="form-control" placeholder="Digite a data da Consulta (yyyy-MM-dd)">
+          <div *ngIf="teste" class="invalid-feedback"> Consulta já agendada no dia para o paciente informado
+          </div>
+          <div *ngIf="formGroup.errors?.['minlength']" class="erro-detalhes"> Informe a data no modelo (yyyy-MM-dd)
+          </div>
+          <div *ngIf="formGroup.errors?.['maxlength']" class="erro-detalhes"> Informe a data no modelo (yyyy-MM-dd)
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="model">Hora Consulta</label>
+          <input type="text" formControlName="horaConsulta" id="hora-consulta" name="horaConsulta" minlength="5"
+            maxlength="5" class="form-control" placeholder="Digite a hora da Consulta (mm:ss)">
+          <div *ngIf="formGroup.errors?.['minlength']" class="erro-detalhes"> Informe a hora no formato (mm:ss)
+          </div>
+          <div *ngIf="formGroup.errors?.['maxlength']" class="erro-detalhes"> Informe a hora no formato (mm:ss)
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="model">Sala Consulta</label>
+          <input type="text" formControlName="salaConsulta" id="sala-consulta" name="salaConsulta" class="form-control"
+            placeholder="Digite a sala da Consulta">
+        </div>
+        <button type="submit" (click)="btnSalvar()" class="btn btn-primary btn-add-consulta">Salvar</button>
+        <button type="reset" class="btn btn-secondary btn-add-consulta" (click)="btnVoltar()">Cancelar</button>
+
+      </form>
+    </div>
+  </div>
+</div>
